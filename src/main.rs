@@ -1,16 +1,19 @@
-use std::io;
+struct Philosopher {
+name: String,
+}
+
+impl Philosopher {
+fn new(name: &str) -> Philosopher {
+	Philosopher {
+	name: name.to_string(),
+	}
+}
+}
 
 fn main() {
-
-	println!("Take a guess:");
-
-	let mut guess = String::new();
-
-	io::stdin()
-		.read_line(&mut guess)
-		.ok()
-		.expect("Failed to read line");
-
-	println!("You guessed: {}", guess);
-
+	let p1 = Philosopher::new("Judith Butler");
+	let p2 = Philosopher::new("Gilles Deleuze");
+	let p3 = Philosopher::new("Karl Marx");
+	let p4 = Philosopher::new("Emma Goldman");
+	let p5 = Philosopher::new("Michel Foucault");
 }
